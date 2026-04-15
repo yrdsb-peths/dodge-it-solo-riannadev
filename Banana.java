@@ -4,11 +4,18 @@ public class Banana extends Actor
 {
     public void act()
     {
-        move(-3);
+        move(-10);
         
         if(getX() <= 0)
         {
             resetBanana();
+        }
+        
+        if (isTouching(Hero.class))
+        {
+            GameOver gameOver = new GameOver();
+            getWorld().addobject(gameOver, 300, 200);
+            getWorld().removeObject(this);
         }
     }
     
@@ -17,7 +24,7 @@ public class Banana extends Actor
         int num = Greenfoot.getRandomNumber(2);
         if(num == 0)
         {
-        setLocation(600,100);
+            setLocation(600,100);
         }
         else
         {
