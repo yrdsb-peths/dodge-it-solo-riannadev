@@ -2,10 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Hero extends Actor
 {
+    boolean atTop = true;
+
     public void act()
-    {
-        boolean atTop = true;
-        
+    {        
         if(Greenfoot.mouseClicked(null))
         {
             atTop = !atTop;
@@ -15,7 +15,6 @@ public class Hero extends Actor
         {
             setLocation(100,100);
         }
-        
         else 
         {
             setLocation(100,300);
